@@ -66,6 +66,7 @@ pip install python
 |                         |                   |                |
 
 * * For local docker
+
 | Method                     | Content           | Response       |
 |----------------------------|-------------------|----------------|
 | http://localhost:80/       | Welcome to my app | 200 OK         |
