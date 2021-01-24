@@ -78,9 +78,25 @@ pip install python
 | URL                            | Content           | Response       |
 |--------------------------------|-------------------|----------------|
 | http://127.0.0.1:63853/        | Welcome to my app | 200 OK         |
-| /http://127.0.0.1:63853/status |                   | 204 No Content |
+| http://127.0.0.1:63853/status  |                   | 204 No Content |
 |                                |                   |                |
 
+* For Cloud
+
+* * Google Kubernetes Engine (GKE)
+
+| URL                            | Content           | Response       |
+|--------------------------------|-------------------|----------------|
+| 34.65.221.236:5000             | Welcome to my app | 200 OK         |
+| 34.65.221.236:5000/status      |                   | 204 No Content |
+|                                |                   |                |
+
+* * Mysql Server
+
+| Connection IP | Connection Name                                 |   |   |   |
+|---------------|-------------------------------------------------|---|---|---|
+| 34.65.145.206 | enhanced-prism-233310:europe-west6:mysql-server |   |   |   |
+|               |                                                 |   |   |   |
 
 
 
