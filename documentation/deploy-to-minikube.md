@@ -48,4 +48,37 @@ spec:
 - After the creation, we need to apply yml config into kubectl 
 
 ``kubectl apply -f flaskservice_deployment.yml`` 
+
+
 ``kubectl apply -f 2_service.yml``
+
+-Then, we need to create pods & services
+``kubectl create -f flaskservice_deployment.yml``
+
+``kubectl create -f 2_service.yml``
+
+- Finally, it would be able to see `service` & `pods` 
+```
+arbade@Ardas-MacBook-Pro ~ % kubectl get svc
+NAME          TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+hello-flask   NodePort    10.109.106.207   <none>        80:32420/TCP   11h
+kubernetes    ClusterIP   10.96.0.1        <none>        443/TCP        12h
+arbade@Ardas-MacBook-Pro ~ % kubectl get all
+NAME                               READY   STATUS    RESTARTS   AGE
+pod/hello-flask-7489c56888-gnq8d   1/1     Running   1          11h
+pod/hello-flask-7489c56888-hwthw   1/1     Running   1          11h
+
+NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+service/hello-flask   NodePort    10.109.106.207   <none>        80:32420/TCP   11h
+service/kubernetes    ClusterIP   10.96.0.1        <none>        443/TCP        12h
+
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/hello-flask   2/2     2            2           11h
+
+NAME                                     DESIRED   CURRENT   READY   AGE
+replicaset.apps/hello-flask-7489c56888   2         2         2       11h
+
+```
+
+- Another way to able to see cluster information : ``minikube dashboard``
+
