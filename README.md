@@ -56,6 +56,7 @@ pip install python
 ```
 ## Table of Content to Endpoints
 * For local
+
 * * Basic Flask Application
 
 | Method                  | Content           | Response       |
@@ -64,6 +65,20 @@ pip install python
 | http://127.0.0.1/status |                   | 204 No Content |
 |                         |                   |                |
 
+* * For local docker
+| Method                     | Content           | Response       |
+|----------------------------|-------------------|----------------|
+| http://localhost:80/       | Welcome to my app | 200 OK         |
+| http://localhost:80/status |                   | 204 No Content |
+|                            |                   |                |
+
+* * For local minikube (k8s)
+
+| URL                            | Content           | Response       |
+|--------------------------------|-------------------|----------------|
+| http://127.0.0.1:63853/        | Welcome to my app | 200 OK         |
+| /http://127.0.0.1:63853/status |                   | 204 No Content |
+|                                |                   |                |
 
 
 
