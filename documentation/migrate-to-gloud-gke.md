@@ -55,7 +55,7 @@ latest: digest: sha256:15c89483439e68c57404efe33a92be67e82caec70981298681e0bffd2
 
 ```
 
--Finally you would be able to see ``docker images``
+- Finally you would be able to see ``docker images``
 
 ```
 arbade@Ardas-MacBook-Pro ~ % docker images 
