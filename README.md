@@ -103,5 +103,7 @@ pip install python
 
 It could be following links for deployment related flask app
 
-- Build to dockerfile python applicaton [`example-cqrs`](documentation/build-to-docker.md)
+- Build to dockerfile python applicaton [`build dockerfile`](documentation/build-to-docker.md)
+- Deploy the docker file on minikube [`deploy on minikube`](documentation/deploy-to-minikube.md)
+- Migrate to Google Cloud GKE to k8s  Deploy the docker file on minikube [`migrate local pods`](documentation/migrate-to-gloud-gke.md)
 
