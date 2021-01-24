@@ -56,13 +56,13 @@ pip install python
 ```
 ## Table of Content to Endpoints
 * For local
-* *Basic Flask Application
+* * Basic Flask Application
 
-| Method                  | Content           | Response       |   |   |
-|-------------------------|-------------------|----------------|---|---|
-| http://127.0.0.1:5000/  | Welcome to my app | 200 OK         |   |   |
-| http://127.0.0.1/status |                   | 204 No Content |   |   |
-|                         |                   |                |   |   |
+| Method                  | Content           | Response       |
+|-------------------------|-------------------|----------------|
+| http://127.0.0.1:5000/  | Welcome to my app | 200 OK         |
+| http://127.0.0.1/status |                   | 204 No Content |
+|                         |                   |                |
 
 
 
