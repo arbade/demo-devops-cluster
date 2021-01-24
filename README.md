@@ -5,7 +5,7 @@
 ##Description
 Python training, local Docker &amp; Kubernetes files, Google Cloud GKE configs
 
-##Pre-Reqiurements
+## Pre-Reqiurements
 - Docker 19.03.13
 - Minikube v1.15.0
 - Pip 20.1
