@@ -181,3 +181,90 @@ REPOSITORY                    TAG                 IMAGE ID            CREATED   
 flask_service                 latest              fba7ca6e5e61        6 seconds ago       954MB
 
 ```
+
+#### Run the docker image -docker run
+
+`` docker run -p 80:80 flask_service``
+
+- ``p`` connects port 80 of the Docker container to port 8080 of your machine, so HTTP can work.
+- ``t`` again specifies the tag of the container we want to run.
+
+```
+(venv) arbade@Ardas-MacBook-Pro flask_service % docker run -p 80:80 flask_service
+Checking for script in /app/prestart.sh
+Running script /app/prestart.sh
+Running inside /app/prestart.sh, you could add migrations to this file, e.g.:
+
+#! /usr/bin/env sh
+
+# Let the DB start
+sleep 10;
+# Run migrations
+alembic upgrade head
+
+/usr/lib/python2.7/dist-packages/supervisor/options.py:461: UserWarning: Supervisord is running as root and it is searching for its configuration file in default locations (including its current working directory); you probably want to specify a "-c" argument specifying an absolute path to a configuration file for improved security.
+  'Supervisord is running as root and it is searching '
+2021-01-24 04:54:23,260 CRIT Supervisor is running as root.  Privileges were not dropped because no user is specified in the config file.  If you intend to run as root, you can set user=root in the config file to avoid this message.
+2021-01-24 04:54:23,260 INFO Included extra file "/etc/supervisor/conf.d/supervisord.conf" during parsing
+2021-01-24 04:54:23,268 INFO RPC interface 'supervisor' initialized
+2021-01-24 04:54:23,268 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2021-01-24 04:54:23,268 INFO supervisord started with pid 1
+2021-01-24 04:54:24,270 INFO spawned: 'nginx' with pid 9
+2021-01-24 04:54:24,272 INFO spawned: 'uwsgi' with pid 10
+[uWSGI] getting INI configuration from /app/uwsgi.ini
+[uWSGI] getting INI configuration from /etc/uwsgi/uwsgi.ini
+
+;uWSGI instance configuration
+[uwsgi]
+cheaper = 2
+processes = 16
+ini = /app/uwsgi.ini
+module = main
+callable = app
+ini = /etc/uwsgi/uwsgi.ini
+socket = /tmp/uwsgi.sock
+chown-socket = nginx:nginx
+chmod-socket = 664
+hook-master-start = unix_signal:15 gracefully_kill_them_all
+need-app = true
+die-on-term = true
+show-config = true
+;end of configuration
+
+*** Starting uWSGI 2.0.18 (64bit) on [Sun Jan 24 04:54:24 2021] ***
+compiled with version: 8.3.0 on 09 May 2020 21:28:24
+os: Linux-5.4.39-linuxkit #1 SMP Fri May 8 23:03:06 UTC 2020
+nodename: 666a16236967
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 6
+current working directory: /app
+detected binary path: /usr/local/bin/uwsgi
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /tmp/uwsgi.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.10 (default, Apr 23 2020, 15:24:07)  [GCC 8.3.0]
+*** Python threads support is disabled. You can enable it with --enable-threads ***
+Python main interpreter initialized at 0x5598af1c8160
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 1239640 bytes (1210 KB) for 16 cores
+*** Operational MODE: preforking ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5598af1c8160 pid: 10 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10)
+spawned uWSGI worker 1 (pid: 13, cores: 1)
+spawned uWSGI worker 2 (pid: 14, cores: 1)
+running "unix_signal:15 gracefully_kill_them_all" (master-start)...
+2021-01-24 04:54:25,532 INFO success: nginx entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2021-01-24 04:54:25,532 INFO success: uwsgi entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+```
