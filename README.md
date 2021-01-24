@@ -93,11 +93,15 @@ pip install python
 
 * * Mysql Server
 
-| Connection IP | Connection Name                                 |   |   |   |
-|---------------|-------------------------------------------------|---|---|---|
-| 34.65.145.206 | enhanced-prism-233310:europe-west6:mysql-server |   |   |   |
-|               |                                                 |   |   |   |
+| Connection IP | Connection Name                                 |
+|---------------|-------------------------------------------------|
+| 34.65.145.206 | enhanced-prism-233310:europe-west6:mysql-server |
+|               |                                                 |
 
 
+## Solution RoadMap
 
+It could be following links for deployment related flask app
+
+-
 
