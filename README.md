@@ -62,7 +62,7 @@ pip install python
 | Method                  | Content           | Response       |
 |-------------------------|-------------------|----------------|
 | http://127.0.0.1:5000/  | Welcome to my app | 200 OK         |
-| http://127.0.0.1/status |                   | 204 No Content |
+| http://127.0.0.1:5000/status |                   | 204 No Content |
 |                         |                   |                |
 
 * * For local docker
